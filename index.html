@@ -51,14 +51,18 @@
                         </div>
                     </v-expand-x-transition>
                 </v-flex>
-                <v-btn text icon @click="searching = !searching"><v-icon>search</v-icon></v-btn>
+                <v-btn text icon @click="searching = !searching"><v-icon>mdi-shape</v-icon></v-btn>
             </v-layout>
         </v-app-bar>
 
         <!-- MAIN CONTENT AREA -->
         <v-main class="grey lighten-4" fluid grid-list-md text-xs-center>
             <v-layout justify-center>
-                <v-flex>
+                <v-col
+                md="3">
+                    <add-item v-on:add-item="addItem"></add-item>
+                </v-col>
+                <v-col>
                     <v-container grid-list-lg fluid justify-space-around align-content-start >
                         <v-layout class="items" >
                             <v-flex v-if="!filteredItems.length" class="no-item">
@@ -76,8 +80,7 @@
 
                     </v-container>
 
-                </v-flex>
-
+                </v-col>
             </v-layout>
 
         </v-main>
@@ -98,6 +101,7 @@
 <script src="js/app-models.js"></script>
 <script src="js/components/item.js"></script>
 <script src="js/components/edit-item.js"></script>
+<script src="js/components/add-item.js"></script>
 <script src="js/components/category-select.js"></script>
 
 <script src="js/app.js"></script>

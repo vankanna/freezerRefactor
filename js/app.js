@@ -31,8 +31,9 @@ const app = new Vue({
     },
     methods: {
 
-        addItem: function(){
-            this.items.unshift(new Item());
+        addItem: function(item){
+            console.log("item")
+            this.items.unshift(item);
         },
         editItem: function (id){
             const index = this.items.findIndex(i => i.id === id)
@@ -41,9 +42,6 @@ const app = new Vue({
         deleteItem: function(id){
             const index = this.items.findIndex(i => i.id === id)
             this.items.splice(index,1)
-        },
-        reset: function(){
-            this.itemToEdit = null;
         },
     },
 

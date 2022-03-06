@@ -67,7 +67,7 @@ Vue.component('Item', {
                     <v-btn text @click="overlay.show=true">Edit</v-btn>
                     <v-btn color="error" @click="deleteItem()" text>Delete</v-btn>
                 </v-card-actions>
-                <edit-item :item="item" :overlay="overlay" v-on:reset="reset"></edit-item>
+                <edit-item :item="item" :overlay="overlay"></edit-item>
             </v-card>
         </v-flex>
     `,

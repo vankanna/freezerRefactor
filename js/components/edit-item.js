@@ -17,12 +17,6 @@ Vue.component('EditItem',{
         }
     },
 
-    methods: {
-        reset: function(){
-            this.$emit('reset');
-        },
-    },
-
     template:
         `
         <v-overlay :dark="false"  :absolute="absolute" v-model="overlay.show" >
