@@ -58,7 +58,7 @@
         <!-- MAIN CONTENT AREA -->
         <v-main class="grey lighten-4" fluid grid-list-md text-xs-center>
             <v-layout justify-center>
-                <v-col
+                <v-col  v-show="showAddMenu"
                 md="3">
                     <add-item v-on:add-item="addItem"></add-item>
                 </v-col>
@@ -70,19 +70,18 @@
                                 <!-- source https://www.grammarly.com/blog/duly-itemd/ -->
                                 <v-img src="images/ice-bg.jpg" contain></v-img>
                             </v-flex>
-
                             <item v-for="(item, i) in filteredItems" v-on:delete-item="deleteItem" v-on:edit-item="editItem" class="item" :item="item" ></item>
                         </v-layout>
                         <!-- FAB (Floating Action Button)-->
-                        <v-btn color="success" dark fab fixed bottom right @click="addItem">
-                            <v-icon>add</v-icon>
-                        </v-btn>
-
                     </v-container>
-
                 </v-col>
             </v-layout>
-
+            <v-btn v-show="!showAddMenu" color="success" dark fab fixed bottom left @click="showAddMenu = !showAddMenu">
+                <v-icon>add</v-icon>
+            </v-btn>
+            <v-btn v-show="showAddMenu" color="error" dark fab fixed bottom left @click="showAddMenu = !showAddMenu">
+                <v-icon>mdi-minus</v-icon>
+            </v-btn>
         </v-main>
 
         <!-- FOOTER -->
@@ -103,6 +102,8 @@
 <script src="js/components/edit-item.js"></script>
 <script src="js/components/add-item.js"></script>
 <script src="js/components/category-select.js"></script>
+<script src="js/components/inventory-alert.js"></script>
+
 
 <script src="js/app.js"></script>
 

@@ -12,16 +12,33 @@ Vue.component('Item', {
             overlay: {
                 show: false,
             },
+            isLow: (this.item.quantity === 1),
+            isEmpty: (this.item.quantity === 0),
         }
     },
 
     methods: {
         addInventory: function() {
             this.item.quantity +=1;
+            this.isEmpty = false;
+            if(this.item.quantity === 1) {
+                this.isLow= true;
+            }
+            if(this.item.quantity > 1) {
+                this.isLow= false;
+            }
         },
         subtractInventory: function() {
             if(this.item.quantity > 0) {
                 this.item.quantity -= 1;
+            }
+            if (this.item.quantity === 1) {
+                this.isLow = true;
+            }
+            if (this.item.quantity === 0) {
+                this.isLow= false;
+
+                this.isEmpty = true;
             }
         },
         editItem: function(){
@@ -34,8 +51,9 @@ Vue.component('Item', {
     },
 
     template: `
-        <v-flex>
-            <v-card class="item" min-width="250px" >
+        <v-flex class="item">
+            <v-card  min-width="250px">
+            <inventory-alert :isEmpty="isEmpty" :isLow="isLow" ></inventory-alert>
                 <v-card-text>
                 <v-row><v-rating
                           v-model="rating"

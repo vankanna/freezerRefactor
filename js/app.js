@@ -22,11 +22,12 @@ const app = new Vue({
             new Item("Grass Fed Top Sirloin Steak", "Meat", "02/12/2024", 10),
             new Item("Ice", "Other","02/12/2024",1),
             new Item("Beef", "Meat","02/12/2024",1),
-            new Item("Top Sirloin Steak", "Meat", "NA", 10),
+            new Item("Top Sirloin Steak", "Meat", "NA", 0),
 
         ],
         itemToEdit: false,
         searching: false,
+        showAddMenu: false,
         category: '',
     },
     methods: {
