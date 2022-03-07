@@ -4,7 +4,6 @@ function Item(title, category, expiration, quantity) {
     this.name = title || 'Name';
     this.category = category || 'Other';
     this.expiration = expiration || 'MM/DD/YYYY'
-    this.quantity = quantity || 0;
-    this.editing = false;
-
+    this.quantity = parseInt(quantity) || 0;
 }
+
