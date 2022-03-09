@@ -1,7 +1,7 @@
 Vue.component('Item', {
     props: {
         item: {
-            type: Item,
+            type: Object,
             required: true,
         },
     },
@@ -36,15 +36,10 @@ Vue.component('Item', {
     template: `
         <v-flex class="item">
             <v-card  min-width="250px">
-            <inventory-alert :quantity="this.item.quantity"></inventory-alert>
+            <inventory-alert :quantity="parseInt(this.item.quantity, 10)"></inventory-alert>
                 <v-card-text>
-                <v-row><v-rating
-                          v-model="rating"
-                          background-color="indigo lighten-3"
-                          medium
-                          color="primary"
-                          length="5"
-                        ></v-rating><br><br>
+                <v-row>
+                    <rating v-model="this.item.rating"></rating>
                     <v-col><div class="category">{{this.item.category}}</div></v-col>         
                    
                 </v-row>

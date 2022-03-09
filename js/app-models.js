@@ -4,6 +4,10 @@ function Item(title, category, expiration, quantity) {
     this.name = title || 'Name';
     this.category = category || 'Other';
     this.expiration = expiration || 'MM/DD/YYYY'
-    this.quantity = parseInt(quantity) || 0;
+    this.quantity = parseInt(quantity, 10) || 0;
 }
 
+function RatingDecorator(item, rating = 0) {
+    item.rating = rating;
+    return item;
+}

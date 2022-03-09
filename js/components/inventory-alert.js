@@ -35,6 +35,7 @@ Vue.component('InventoryAlert',{
 
     methods: {
         update: function() {
+
             if (this.quantity === 0) {
                 this.style = this.status.empty.style;
                 this.message = this.status.empty.message;
