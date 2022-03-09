@@ -17,12 +17,12 @@ const app = new Vue({
 
         items: [
             new RatingDecorator(new Item("Ice Cream", "Other","02/12/2024",4), 4),
-            new Item("Pork", "Meat","02/12/2024",4),
-            new Item("Jacks Pepperoni Pizza", "Other","02/12/2024",6),
-            new Item("Grass Fed Top Sirloin Steak", "Meat", "02/12/2024", 1),
-            new Item("Ice", "Other","02/12/2024",1),
-            new Item("Beef", "Meat","02/12/2024",1),
-            new Item("Top Sirloin Steak", "Meat", "NA", 0),
+            new RatingDecorator(new Item("Pork", "Meat","02/12/2024",4), 1),
+            new RatingDecorator(new Item("Jacks Pepperoni Pizza", "Other","02/12/2024",6), 2),
+            new RatingDecorator(new Item("Grass Fed Top Sirloin Steak", "Meat", "02/12/2024", 1), 3),
+            new RatingDecorator(new Item("Ice", "Other","02/12/2024",1), 2),
+            new RatingDecorator(new Item("Beef", "Meat","02/12/2024",1), 5),
+            new RatingDecorator(new Item("Top Sirloin Steak", "Meat", "NA", 0), 3),
 
         ],
         itemToEdit: false,

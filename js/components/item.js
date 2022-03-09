@@ -41,9 +41,7 @@ Vue.component('Item', {
                 <v-row>
                     <rating v-model="this.item.rating"></rating>
                     <v-col><div class="category">{{this.item.category}}</div></v-col>         
-                   
                 </v-row>
-                
                 <p class="text-h4 text--primary pa-3">{{this.item.name}}</p>
                 <div class="d-flex justify-space-between">Expiration Date
                     <span class="d-flex justify-space-between">Quantity</span>
